@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import PropTypes from 'prop-types';
 
 class TodoItem extends Component {
 
@@ -17,6 +18,15 @@ class TodoItem extends Component {
             <li key={this.props.index} onClick={this.handleDelete}>{this.props.content}</li>
         )
     }
+}
+
+TodoItem.propTypes = {
+    test: PropTypes.string.isRequired,
+    index: PropTypes.number
+}
+
+TodoItem.defaultProps = {
+    test: 'name: '
 }
 
 export default TodoItem;
