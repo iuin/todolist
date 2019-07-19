@@ -13,6 +13,10 @@ class TodoItem extends Component {
         deleteItem(index);
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.content !== this.props.content;
+    }
+
     render() {
         return(
             <li key={this.props.index} onClick={this.handleDelete}>{this.props.content}</li>
